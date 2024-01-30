@@ -1,0 +1,47 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "LevenshteinTester",
+            "request": "launch",
+            "mainClass": "LevenshteinTester",
+            "projectName": "hw07-Rotemkal_a6a0eccd"
+        },
+        {
+            "type": "java",
+            "name": "SpellCheckerTester",
+            "request": "launch",
+            "mainClass": "SpellCheckerTester",
+            "projectName": "hw07-Rotemkal_a6a0eccd"
+        },
+        {
+            "type": "java",
+            "name": "SpellChecker",
+            "request": "launch",
+            "mainClass": "SpellChecker",
+            "projectName": "hw07-Rotemkal_a6a0eccd"
+        },
+        {
+            "type": "java",
+            "name": "HashTagTokenizer",
+            "request": "launch",
+            "mainClass": "HashTagTokenizer",
+            "projectName": "hw07-Rotemkal_a6a0eccd"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "HashTagTokenizer",
+            "args": [
+                "dictionary.txt"
+            ]
+        }
+    ]
+}
