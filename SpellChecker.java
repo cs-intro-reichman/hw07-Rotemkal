@@ -16,20 +16,19 @@ public class SpellChecker {
 
 	public static int levenshtein(String word1, String word2) {
 		word1 = word1.toLowerCase();
-		word2 = word1.toLowerCase();
-		if (word1.length()==0){
+		word2 = word2.toLowerCase();
+		if (word1.length() == 0){
 			return word2.length();
 		}
-		if (word2.length()==0){
+		else if (word2.length() == 0){
 			return word1.length();
 		}
-		if (word1.charAt(0)==word2.charAt(0)){
+		else if (word1.charAt(0) == word2.charAt(0)){
 			return levenshtein(tail(word1), tail(word2));
 		}
-		else {
-			return 1 + Math.min(Math.min((levenshtein(tail(word1),word2)),(levenshtein(tail(word2),word1))),(levenshtein(tail(word1),tail(word2))));
+			int min = Math.min((levenshtein(tail(word1),word2)),(levenshtein(tail(word2),word1)));
+			return 1 + Math.min(min,(levenshtein(tail(word1),tail(word2))));
 		}
-	}
 
 	public static String[] readDictionary(String fileName) {
 			String[] dictionary = new String[3000];
@@ -43,11 +42,10 @@ public class SpellChecker {
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 		String similar = "";
-		int min = levenshtein(word,dictionary[0]), diffrence ; 
-
+		int min = levenshtein(word,dictionary[0]) ; 
 		for (int i = 1 ; i < 3000 ; i++)
 		{
-			diffrence = levenshtein(word,dictionary[i]);
+			int diffrence = levenshtein(word,dictionary[i]);
 			if (diffrence < min)
 			{
 				similar = dictionary[i];
@@ -60,5 +58,4 @@ public class SpellChecker {
 		}
 		return word;
 	}
-
 }
